@@ -108,7 +108,8 @@ RCT_EXPORT_METHOD(receiptExists:(RCTPromiseResolveBlock)resolve)
     resolve(@[[NSNumber numberWithBool:[[NSFileManager defaultManager] fileExistsAtPath:receiptURL.path]]]);
 }
 
-RCT_EXPORT_METHOD(canMakePayments:(RCTPromiseResolveBlock)resolve)
+RCT_EXPORT_METHOD(canMakePayments:(RCTPromiseResolveBlock)resolve
+                  rejecter:(RCTPromiseRejectBlock)reject)
 {
     resolve(@[[NSNumber numberWithBool:[SKPaymentQueue canMakePayments]]]);
 }
